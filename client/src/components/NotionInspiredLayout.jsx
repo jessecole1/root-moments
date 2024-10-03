@@ -7,8 +7,8 @@ import cat from '../img/cat.jpg';
 
 const NotionInspiredLayout = () => {
   return (
-    <div className=" bg-white text-gray-800 min-h-screen p-8">
-      <div className=" shadow-2xl p-8 rounded-2xl max-w-4xl mx-auto">
+    <div className=" bg-[#F3EDE4] text-gray-800 min-h-screen p-8">
+      <div className="bg-white shadow-2xl p-8 rounded-2xl max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-8 mt-16"><span class="text-7xl"><span class="text-indigo-600">Take control</span> of your photography.</span><br/><br/></h1>
         
         <div className="grid md:grid-cols-2 gap-8 mb-16">
@@ -27,7 +27,7 @@ const NotionInspiredLayout = () => {
         </div>
         
         
-        <div className="w-1/2 m-auto space-y-8 mb-16">
+        {/* <div className="w-1/2 m-auto space-y-8 mb-16">
           <div className="flex items-center justify-between">
             <p className="text-xl">See our services that best meet your needs.</p>
             <Button variant="contained" className="w-[10rem] flex items-center">
@@ -43,7 +43,7 @@ const NotionInspiredLayout = () => {
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
