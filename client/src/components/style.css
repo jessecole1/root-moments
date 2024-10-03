@@ -203,3 +203,71 @@
     box-shadow: 10px 6px 15px 0px rgba(46, 61, 73, 0.2);
     transition: box-shadow 0.4s ease-in-out;
 }
+
+.mainHeader {
+    font-size: 8vw; /* 2% of the viewport width */
+}
+
+.hero_sub {
+    width: 30vw;
+    min-width: 300px;
+    max-width: 520px;
+}
+
+.nil_style {
+    font-size: 4vw;
+    line-height: 95%;
+}
+
+@media screen and (min-width: 1200px) {
+    .nil_style {
+        font-size: 56px;
+    }
+}
+
+.nil_style_sub {
+    font-size: 1.5vw;
+}
+
+.nil_container {
+    min-width: 390px;
+    max-width: 980px;
+}
+
+.package_title {
+    font-size: 3vw;
+    font-weight: bold;
+}
+
+.option_serv {
+    border-radius: 350px;
+    padding: 20px;
+    width: 19vw;
+    max-width: 290px;
+    height: 19vw;
+    max-height: 290px;
+}
+
+.option_title {
+    font-size: 3vw;
+}
+
+@media screen and (min-width: 1200px) {
+    .option_title {
+        font-size: 38px;
+    }
+}
+
+.option_text {
+    font-size: 1vw;
+}
+
+.option_container {
+    max-width: 916px;
+}
+
+@media screen and (min-width: 1200px) {
+    .option_text {
+        font-size: 16px;
+    }
+}

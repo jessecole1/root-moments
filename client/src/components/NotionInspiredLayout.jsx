@@ -5,6 +5,8 @@ import { ReactCompareSlider, ReactCompareSliderImage } from 'react-compare-slide
 import dog from '../img/dog.jpeg';
 import cat from '../img/cat.jpg';
 
+import '../embed.css';
+
 const NotionInspiredLayout = () => {
   return (
     <div className=" bg-[#F3EDE4] text-gray-800 min-h-screen p-8">
@@ -13,11 +15,11 @@ const NotionInspiredLayout = () => {
         
         <div className="grid md:grid-cols-2 gap-8 mb-16">
           <div>
-            <h1 class="text-4xl font-bold">Manage it with ease.</h1>
+            <h1 class="text-4xl font-bold">Digitally Enhanced.</h1>
             <br/>
-            <h2 className="text-2xl font-semibold mb-4">Digitally enhanced copies with accurate color matching.</h2>
+            <h2 className="text-2xl font-semibold mb-4">Manage With Ease.</h2>
             <br/>
-            <p className="text-xl mb-8">Easy to keep track, store in one consolidated thumb-drive / flash-drive, Google Cloud account, or hard drive.</p>
+            <p className="text-xl mb-8">Keep Your Photos With You. Anytime, Anywhere.</p>
 
           </div>
           <div className="bg-gray-100 h-64 flex items-center justify-center text-gray-400">
