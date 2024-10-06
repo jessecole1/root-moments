@@ -6,7 +6,7 @@ const InHome = (props) => {
 
     return (
         <div style={{borderRadius: "10px", background: '#fcfeff'}} className={`mb-8 servOption h-fit font-serif w-64 text-center flex flex-col items-center`}>
-            <div class="rounded-lg w-full bg-rose-800">
+            <div class="rounded-lg w-full bg-[#FF6500]">
                 <p class="text-white border-gray-700 p-0 text-3xl font-serif m-4 font-bold">
                     {serviceHeader}
                 </p>

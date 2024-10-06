@@ -240,12 +240,28 @@
 }
 
 .option_serv {
-    border-radius: 350px;
+    border-radius: 20px;
+    /* border: 2px solid #9CA3AF; */
     padding: 20px;
-    width: 19vw;
-    max-width: 290px;
-    height: 19vw;
-    max-height: 290px;
+    width: 230px;
+    height: 9vw;
+    max-height: 230px;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #4B5563;
+    box-shadow: 2px 1px 5px black;
+    transition:  box-shadow 0.1s ease-in-out;
+}
+
+.option_serv:hover {
+    box-shadow: 5px 2px 10px black;
+    border: none;
+    color: rgb(31 41 55);
+    transition: box-shadow 0.2s ease-in-out;
 }
 
 .option_title {
@@ -270,4 +286,50 @@
     .option_text {
         font-size: 16px;
     }
+}
+
+.photo_type_container {
+    width: 74vw;
+    height: 64vw;
+    min-width: 390px;
+    max-width: 980px;
+    max-height: 612px;
+    min-height: 545px;
+    overflow-y: scroll;
+}
+
+.photo_type_title {
+    font-size: 4vw;
+    font-weight: bold;
+    line-height: 95%;
+    /* margin-left: 40px; */
+}
+
+.picture_type_title {
+    /* font-size: 3vw; */
+    font-size: clamp(25px, 3vw, 38px);
+    font-weight: bolder;
+    text-align: center;
+}
+
+
+
+.picture_type_title_mem {
+    font-size: 220%;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.svg_option {
+    min-width: 50px;
+    min-height: 50px;
+}
+
+.notion_class {
+    width: clamp(248px, 25vw, 390px);
+}
+
+.notion_text {
+    font-size: clamp(17px, 1.5vw, 20px);
+    margin-right: 64px;
 }
