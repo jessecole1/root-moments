@@ -5,7 +5,11 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 
 import Main from './components/Main';
 import PhotoScanService from './components/PhotoScanService';
-import Order from './components/Order';
+import OrderPage from './components/OrderPage';
+import Facts from './components/Facts';
+import PricingTier from './components/PricingTier'
+import Solutions from './components/Solutions';
+import HowItWorksPage from './components/HowItWorksPage';
 
 function App({ children }) {
   return (
@@ -15,7 +19,11 @@ function App({ children }) {
           <Routes>
             <Route element={<Main />} path="/" />
             <Route element={<PhotoScanService />} path="/services/photo-scanning" />
-            <Route element={<Order />} path="/order/photo-scanning" />
+            <Route element={<PricingTier />} path="/pricing" />
+            <Route element={<OrderPage />} path="/order/photo-scanning" />
+            <Route element={<Facts />} path="/facts" />
+            <Route element={<Solutions />} path="/solutions" />
+            <Route element={<HowItWorksPage />} path="/how-it-works" />
           </Routes>
         </BrowserRouter>
       </div>

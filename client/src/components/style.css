@@ -275,11 +275,12 @@
 }
 
 .option_text {
-    font-size: 1vw;
+    font-size: clamp(12px, 1vw, 20px);
 }
 
 .option_container {
     max-width: 916px;
+    margin-top: 70px;
 }
 
 @media screen and (min-width: 1200px) {
@@ -332,4 +333,9 @@
 .notion_text {
     font-size: clamp(17px, 1.5vw, 20px);
     margin-right: 64px;
+}
+
+.icon {
+    width: 70px;
+    height: 70px;
 }

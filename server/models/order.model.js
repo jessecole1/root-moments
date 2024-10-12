@@ -1,28 +1,55 @@
 const mongoose = require('mongoose');
 
 const OrderSchema = mongoose.Schema({
-    name: {
+    user: {
+        type: mongoose.Schema.Types.ObjectId, ref: 'User' 
+    },
+    firstName: {
         type: String,
-        required: [true, "Name is required"]
+        required: [true, message="First name required"]
+    },
+    lastName: {
+        type: String,
+        required: [true, message="Last name required"]
     },
     email: {
         type: String,
-        required: [true, "Email is required"],
-        validate: {
-            validator: val => /^([\w-\.]+@([\w-]+\.)+[\w-]+)?$/.test(val),
-            message: "Please enter a valid email address"
-        }
+        required: [true, message="Email is required"]
     },
-    phoneNumber: {type: Number},
-    address: {type: String},
-    prefDateTime: {type: Date},
-    additionalInfo: {type: String},
-    package: {type: String},
-    numOfPhotos: {type: Number},
-    editing: {type: Boolean},
-    organizing: {type: Boolean},
-    thumbDrive: {type: Boolean},
-    cloudDrive: {type: Boolean},
+    phone: {
+        type: String, 
+        required: [true, message="Phone number is required"]
+    },
+    numberOfPhotographs: {
+        type: Number,
+        required: [true, message="Approximate number of photos"]
+    },
+    package: {
+        type: String, 
+        required: [true, message="Please select a package"]
+    },
+    serviceType: {
+        type: String, 
+        required: [true, message="Please select a Service Type"]
+    },
+    address: {
+        type: String
+    },
+    unit: {
+        type: String
+    },
+    city: {
+        type: String
+    },
+    zip: {
+        type: String
+    },
+    startDate: {
+        type: String
+    },
+    notes: {
+        type: String
+    }
 }, {timestamps: true});
 
 module.exports = mongoose.model('Order', OrderSchema);

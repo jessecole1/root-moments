@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import logo from '../icons/rootmoments_logo.png';
 import menu from '../icons/hamburger_menu.png';
 
+
 const Navbar = () => {
 
     // Handle width change for hamburger menu display
@@ -35,12 +36,13 @@ const Navbar = () => {
     return (
         <div class=" h-full">
             <div class="h-24 flex flex-row items-center justify-between">
-                <h1 class="text-lg font-bold mt-4 sm:text-3xl w-72"><Link to="/"><img className="w-[150px]" src={logo} /></Link></h1>
-                <div className={`flex flex-row space-evenly w-[440px] ${windowWidth < 1024? "hidden" : ""}`}>
+                <h1 class="text-lg font-bold mt-4 sm:text-3xl w-72"><Link to="/"><img className="h-[96px] ml-4" src={logo} /></Link></h1>
+                <div className={`flex flex-row space-evenly w-[540px] ${windowWidth < 1024? "hidden" : ""}`}>
                     <Button sx={{width: "50%", margin: "auto", color: ""}} size="large" variant="text"><Link to="/order/photo-scanning">Order</Link></Button>
-                    <Button sx={{width: "50%", margin: "auto"}} size="large" variant="text"><Link to="/services/photo-scanning">Services</Link></Button>
-                    <Button sx={{width: "50%", margin: "auto"}} size="large" variant="text">Pricing</Button>
-                    <Button sx={{width: "50%", margin: "auto"}} size="large" variant="text">About</Button>
+                    <Button sx={{width: "50%", margin: "auto", color: ""}} size="large" variant="text"><Link to="/facts">Facts</Link></Button>
+                    <Button sx={{width: "50%", margin: "auto"}} size="large" variant="text"><Link to="/pricing">Pricing</Link></Button>
+                    <Button sx={{width: "50%", margin: "auto"}} size="large" variant="text"><Link to="/solutions">Solutions</Link></Button>
+                    <Button sx={{width: "100%", margin: "auto"}} size="large" variant="text"><Link to="/how-it-works">How It Works</Link></Button>
                 </div>
                 <div class={`flex flex-row justify-evenly items-center w-72 ${windowWidth < 1024? "hidden" : ""}`}>
                     <Button sx={{width: "40%", margin: "auto", color: ""}} size="large" variant="outlined">Log In</Button>
