@@ -331,8 +331,8 @@
 }
 
 .notion_text {
-    font-size: clamp(17px, 1.5vw, 20px);
-    margin-right: 64px;
+    font-size: clamp(15px, 1.5vw, 20px);
+    /* margin-right: 64px; */
 }
 
 .icon {

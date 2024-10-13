@@ -12,17 +12,17 @@ const NotionInspiredLayout = () => {
   return (
     <div className=" bg-[#F3EDE4] text-gray-800 min-h-screen p-8">
       <div className="bg-white shadow-2xl p-8 rounded-2xl max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold mb-8 mt-8"><span class="text-7xl"><span class="text-indigo-600">Take control</span> of your photography.</span><br/><br/></h1>
-        <div className=" flex flex-col justify-evenly">
-          <div className="flex flex-row justify-evenly flex-wrap">
-            <div className="notion_class min-w-[425px] md:w-2/5 flex flex-col justify-evenly">
-              <div class="flex flex-col justify-evenly h-1/3">
+        <h1 className="text-4xl font-bold mb-8 mt-8"><span class="text-7xl"><span class="text-indigo-600">Custom Editing</span> included.</span><br/><br/></h1>
+        <div className=" flex flex-col justify-evenly items-center">
+          <div className="flex flex-row-reverse justify-evenly flex-wrap">
+            <div className="notion_class h-[200px] md:h-[328px]  min-w-[425px] md:w-2/5 flex flex-col justify-evenly">
+              <div class="flex flex-col text-center justify-evenly h-1/3">
                 <p className="text-4xl font-bold">Digitally Enhance</p>
                 <p className="notion_text">
                   Improve sharpness and overall image quality.
                 </p>
               </div>
-              <div class="flex flex-col justify-evenly h-1/3">
+              <div class="flex flex-col text-center justify-evenly h-1/3">
                 <p className="text-4xl font-bold">Denoising</p>
                 <p className="notion_text">
                   Visual noise and grain reduction for clean and sharper images.
@@ -34,10 +34,10 @@ const NotionInspiredLayout = () => {
               itemTwo={<ReactCompareSliderImage src={cat} />} />
             </div>
           </div>
-          <div className="flex flex-row-reverse flex-wrap justify-evenly">
+          <div className="flex flex-row-reverse items-center flex-wrap justify-evenly">
             <div className="notion_class pl-8 min-w-[425px] md:w-2/5 flex flex-col justify-evenly">
-              <div class="flex flex-col justify-evenly h-1/3">
-                <p className="text-4xl font-bold">Auto-Correction</p>
+              <div class="flex flex-col text-center justify-evenly h-1/3">
+                <p className="text-4xl font-bold">Color-Correction</p>
                 <p className="notion_text">
                   Adjusting exposure, contrast, and color balance for stunning quality.
                 </p>

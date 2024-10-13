@@ -66,7 +66,7 @@ const HowItWorksPage = () => {
   ];
 
   return (
-    <div>
+    <div style={{ fontFamily: "IBM Plex Mono" }}>
       <Navbar />
       <div className="bg-[#F3EDE4] pb-8 pt-8">
 
@@ -87,10 +87,10 @@ const HowItWorksPage = () => {
               subSteps={step.subSteps}
             />
           ))}
-          
+{/*           
           <div className="mt-8 text-gray-500 italic">
             Last edited 1 hour ago
-          </div>
+          </div> */}
         </div>
       </div>
       <Footer />

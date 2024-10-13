@@ -81,19 +81,18 @@ const OrderForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios.post("http://localhost:8000/place-order", formData, {withCredentials: true})
-    .then((response) => {
+      .then((response) => {
         console.log("Form submitted: ", response.data);
-        navigate("/facts");
-    })
-    .catch((err) => {
+        navigate("/order-success");  // Redirect to the success page
+      })
+      .catch((err) => {
         console.log("Error submitting the form: ", err);
-    })
-    // console.log('Form submitted:', formData);
-    // Here you would typically send the data to your server
+        // You might want to show an error message to the user here
+      });
   };
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow-md">
+    <form style={{ fontFamily: "IBM Plex Mono" }} onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow-md">
       <h2 className="text-2xl font-bold mb-6">Order Form</h2>
       
       <div className="flex gap-4 mb-4">
@@ -152,7 +151,7 @@ const OrderPage = () => {
   // ... [Previous HowItWorksPage component code]
   
   return (
-    <div>
+    <div style={{ fontFamily: "IBM Plex Mono" }}>
         <Navbar />
         <div className="bg-[#F3EDE4] font-sans min-h-screen flex flex-col">
         <div className="max-w-3xl mx-auto p-8 flex-grow">

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const InHome = (props) => {
 
-    const {photoTypes, serviceHeader, thumbDrive, cloudStorage, organization, enhancing} = props;
+    const {photoTypes, serviceHeader, scanType, cloudStorage, organization, enhancing} = props;
 
     return (
         <div style={{borderRadius: "10px", background: '#fcfeff'}} className={`mb-8 servOption h-fit font-serif w-64 text-center flex flex-col items-center`}>
@@ -13,7 +13,7 @@ const InHome = (props) => {
             </div>
             <div class="italic font-bold p-4 flex flex-col justify-evenly ">
                 <p class="mt-4 h-16">
-                    Thumb Drive: {thumbDrive}
+                    {scanType}
                 </p>
                 {
                     cloudStorage !== "Unavailable" ? (
@@ -37,7 +37,7 @@ const InHome = (props) => {
                 <hr></hr>
                 <br/>
                 <p class="h-16">
-                    Photo Enhancement: {enhancing}
+                    Custom Editing: {enhancing}
                 </p>
                 <hr></hr>
                 <br/>

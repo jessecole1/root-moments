@@ -17,7 +17,7 @@ const FactBox = ({ icon, title, description }) => (
 
 const FactsPage = () => {
   return (
-    <div className="">
+    <div style={{ fontFamily: "IBM Plex Mono" }} className="">
       <Navbar />
       <div className="bg-[#F3EDE4] text-gray-800 min-h-screen p-8">
         <div className="bg-white bg-[#F3EDE4] shadow-2xl p-8 rounded-2xl max-w-4xl mx-auto">
@@ -53,7 +53,6 @@ const FactsPage = () => {
             <div className="mt-12 bg-gray-100 p-6 rounded-lg">
             <h2 className="text-2xl font-semibold mb-4">Did You Know?</h2>
             <ul className="list-disc pl-5 space-y-2">
-                <li>We can scan up to 1,000 photos per day.</li>
                 <li>Our scanning process includes basic color correction and dust removal.</li>
                 <li>We can handle photos of various sizes, from wallet-sized to large format prints.</li>
                 <li>All your original photos are returned to you along with the digital files.</li>

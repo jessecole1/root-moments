@@ -10,8 +10,8 @@ import NotionInspiredLayout from './NotionInspiredLayout';
 import NotionInspiredLayoutTwo from './NotionInspiredLayoutTwo';
 import ServiceOption from './ServiceOption';
 import Footer from './Footer';
-
 import Navbar from './Navbar';
+import AdminDashboard from './AdminDashboard';
 
 const Main = () => {
 
@@ -26,7 +26,7 @@ const Main = () => {
     })
 
     return (
-        <div class="flex flex-col h-screen">
+        <div style={{ fontFamily: "IBM Plex Mono" }} class="flex flex-col h-screen">
             <Navbar />
             <div class=" w-full">
                 <div style={{backgroundImage: `url(${newBg})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', height: '700px', backgroundPosition: 'top'}}>
@@ -71,7 +71,7 @@ const Main = () => {
                             <div className="w-full h-full">
                                 <h2 className="nil_style mb-4 font-bold">Your memories, <br/>flawlessly <span>preserved.</span></h2>
                                 <div className='option_container w-full flex flex-col md:flex-row flex-wrap justify-evenly items-center' >
-                                    <div className="option_serv h-1/3 text-gray-800 bg-gray-200/70 shadow-2xl mr-2 mb-8  flex flex-col items-center justify-center">
+                                    <div className="option_serv h-1/3 text-gray-800 bg-gray-200/70 shadow-2xl mr-2 mb-8 bg-white flex flex-col items-center justify-center">
                                         <h3 className="option_title font-bold">SCAN</h3>
                                         <p className="option_text font-bold italic text-center">Scan your photos for easy storage and sharing.</p>
                                     </div>
@@ -112,14 +112,14 @@ const Main = () => {
                             <h2 className="text-center package_title">Choose From the Following Packages</h2>
                             <h2 className="text-center package_title">To Best Fit Your Needs</h2>
                             <div class="max-w-[1200px] m-auto flex-wrap pt-16 flex flex-row justify-evenly" >
-                                <ServiceOption serviceHeader="Classic Preservation" photoTypes={["Loose Photos", "Pocket Albums"]} thumbDrive={"Included"} cloudStorage={"Unavailable"} organization={"Available"} enhancing={"Available"} />
-                                <ServiceOption serviceHeader="Memory Keeper" photoTypes={["Loose Photos", "Pocket Albums"]} thumbDrive={"Included"} cloudStorage={"Included"} organization={"Available"} enhancing={"Available"} />
-                                <ServiceOption serviceHeader="Premium Archival" photoTypes={["Loose Photos", "Pocket Albums", "Adhesive", "Memorabilia", "Photo backs"]} thumbDrive={"Included"} cloudStorage={"Included"} organization={"Available"} enhancing={"Available"} />
+                                <ServiceOption serviceHeader="Classic Preservation" photoTypes={["Loose Photos", "Pocket Albums"]} scanType={"Scanning at 600 DPI"} cloudStorage={"Unavailable"} organization={"Available"} enhancing={"Available"} />
+                                <ServiceOption serviceHeader="Memory Keeper" photoTypes={["Loose Photos", "Pocket Albums"]} scanType={"Scanning at 600 DPI"} cloudStorage={"Included"} organization={"Available"} enhancing={"Available"} />
+                                <ServiceOption serviceHeader="Premium Archival" photoTypes={["Loose Photos", "Pocket Albums", "Adhesive", "Memorabilia", "Photo backs"]} scanType={"Scanning at 600-1,200 DPI"} cloudStorage={"Included"} organization={"Available"} enhancing={"Included"} />
                             </div>
                         </div>
                 <div className='overflow-y-scroll flex flex-wrap justify-evenly' style={{backgroundImage: `url(${newBg})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', height: '700px', backgroundPosition: 'bottom'}}>
                     <div className="bg-white/80 shadow-2xl p-8 bg-gray-100/80 m-auto rounded-2xl photo_type_container h-full">
-                        <h2 className="photo_type_title text-black "><span className="text-[130%]"><span className="">Our focus</span> </span>is<br/> your <span className="text-indigo-600">collection.</span></h2>
+                        <h2 className="photo_type_title text-black "><span className=""><span className="text-indigo-600">Our Focus</span> </span>is<br/> Quality <span className="">and Privacy.</span></h2>
                         <div className=" flex flex-row flex-wrap justify-evenly mt-24 h-fit ">
                             <div onMouseLeave={() => handleHover("")} onMouseEnter={() => handleHover('photos')} className="cursor-pointer option_serv h-1/3 text-gray-800 bg-gray-200/80 mr-2 mb-8  flex flex-col items-center justify-end">
                                 <h3 className="picture_type_title">Photos</h3>

@@ -89,7 +89,7 @@ const PricingPage = () => {
   ];
 
   return (
-    <div>
+    <div style={{ fontFamily: "IBM Plex Mono" }}>
         <Navbar />
         <div className="bg-[#F3EDE4] text-gray-800 min-h-screen p-8">
         <div className="bg-white shadow-2xl p-8 rounded-2xl max-w-6xl mx-auto">
