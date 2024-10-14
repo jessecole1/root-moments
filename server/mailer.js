@@ -29,8 +29,8 @@ const sendOrderNotification = async (orderDetails) => {
 // Send Confirmation Email to Customer
 const sendOrderNotificationToCustomer = async (orderDetails) => {
     const mailOptions = {
-        from: 'cole.j.jesse@gmail.com',
-        to: 'cole.j.jesse@gmail.com',
+        from: process.env.TEMP_EMAIL,
+        to: process.env.TEMP_EMAIL,
         subject: 'We Received Your Order!',
         text:  `Thank you for your order! We will reach out shortly.`
     };
