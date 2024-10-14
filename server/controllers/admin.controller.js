@@ -75,7 +75,7 @@ module.exports.adminLogout = async (request, response) => {
     response.sendStatus(200);
 };
 
-module.exports.getAdmin = (request, response) => {
+module.exports.getAdmin = async (request, response) => {
     const token = request.cookies.admintoken;
     if (token) {
         try {

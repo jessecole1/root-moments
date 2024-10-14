@@ -5,7 +5,7 @@ const cookieParser = require('cookie-parser');
 const app = express();
 
 const allowedOrigins = [
-    'https://rootmoments.netlify.app',
+    'https://rootmoments.netlify.app/',
     'http://localhost:3000'
 ]
 

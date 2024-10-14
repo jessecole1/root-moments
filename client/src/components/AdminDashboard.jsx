@@ -100,11 +100,11 @@ const AdminDashboard = () => {
   const handleLogout = () => {
     axios.post("https://root-moments.onrender.com/logout", {}, {withCredentials: true})
     .then(() => {
-        localStorage.removeItem('adminInfo');
-        setAdminLoggedIn(false);
-        setAdmin(null);
+        // localStorage.removeItem('adminInfo');
     })
     .then(() => {
+        setAdminLoggedIn(false);
+        setAdmin(null);
         navigate('/admin-login')
     })
     .catch((err) => {
