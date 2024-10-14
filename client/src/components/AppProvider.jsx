@@ -14,8 +14,15 @@ const AppProvider = ({ children }) => {
         setError(null);
         axios.get("https://root-moments.onrender.com/admin", {withCredentials: true})
             .then((res) => {
-                setAdmin(res.data.admin);
-                setAdminLoggedIn(res.data.loggedInStatus);
+                if (res.data.loggedInStatus) {
+                    setAdminLoggedIn(true);
+                    setAdmin(response.data.admin);
+                  } else {
+                    setAdminLoggedIn(false);
+                    setAdmin(null);
+                  }
+                // setAdmin(res.data.admin);
+                // setAdminLoggedIn(res.data.loggedInStatus);
             })
             .catch((err) => {
                 console.log("Error checking authentication", err);

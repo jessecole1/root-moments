@@ -53,7 +53,7 @@ const Navbar = () => {
                             <img className="h-24 w-auto" src={logo} alt="Logo" />
                         </Link>
                     </div>
-                        <p>test 4</p>
+                        <p>test 5</p>
 
                     {/* Desktop menu */}
                     <div className={`flex flex-row justify-evenly w-[540px] ${windowWidth < 1024 ? "hidden" : ""}`}>
