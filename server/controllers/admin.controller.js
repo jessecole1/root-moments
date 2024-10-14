@@ -33,9 +33,9 @@ module.exports.adminRegister = (request, response) => {
 
         response.cookie("admintoken", adminToken, {
             httpOnly: true,
-            // secure: true,
-            // sameSite: 'None',
-            // domain: '.rootmoments.netlify.app',
+            secure: true,
+            sameSite: 'None',
+            domain: '.rootmoments.netlify.app',
         });
         response.json({ message: "Admin Successfully Registered", admin: admin, cookie: adminToken });
     })
@@ -63,9 +63,9 @@ module.exports.adminLogin = async (request, response) => {
 
         response.cookie("admintoken", adminToken, {
             httpOnly: true,
-            // secure: true,
-            // sameSite: 'None',
-            // domain: '.rootmoments.netlify.app',
+            secure: true,
+            sameSite: 'None',
+            domain: '.rootmoments.netlify.app',
             // maxAge: 24 * 60 * 60 * 1000 * 7,
         })
         .json({ message: "Admin Successfully Logged In", admin: admin, cookie: adminToken });
@@ -77,10 +77,10 @@ module.exports.adminLogin = async (request, response) => {
 module.exports.adminLogout = (request, response) => {
     response.clearCookie("admintoken", {
         // path: '/',  // Ensure this matches how the cookie was set
-        // domain: '.yourdomain.com',  // Use the same domain if specified while setting the cookie
-        // secure: true,  // Same as when the cookie was created
+        domain: '.rootmoments.netlify.app',  // Use the same domain if specified while setting the cookie
+        secure: true,  // Same as when the cookie was created
         httpOnly: true,  // If this was set when the cookie was created
-        // sameSite: 'None'
+        sameSite: 'None'
     });
     console.log("cookie: " + request.cookie);
     response.sendStatus(200);
