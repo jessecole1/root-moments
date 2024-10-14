@@ -78,6 +78,7 @@ module.exports.adminLogout = (request, response) => {
         httpOnly: true,  // If this was set when the cookie was created
         sameSite: 'None'
     });
+    console.log("cookie: " + request.cookie);
     response.sendStatus(200);
 };
 

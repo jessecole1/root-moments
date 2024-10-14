@@ -101,6 +101,7 @@ const AdminDashboard = () => {
     axios.post("https://root-moments.onrender.com/logout", {withCredentials: true})
     .then(() => {
         // localStorage.removeItem('adminInfo');
+        localStorage.removeItem('adminInfo');
         setAdminLoggedIn(false);
         setAdmin(null);
         navigate('/admin-login')
