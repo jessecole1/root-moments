@@ -35,7 +35,7 @@ function App({ children }) {
               <Route element={<OrderSuccessPage />} path="/order-success" />
               <Route element={<AdminLoginForm />} path="/admin-login" />
               <Route element={<AdminRegisterForm />} path="/admin-register" />
-              <Route element={<AdminDashboard path="/dashboard" />}/>
+              <Route element={<AdminDashboard /> } path="/dashboard" />
               <Route element={<AdminOrdersPage />} path="/orders" />
 
               {/* <Route path="*" element={<Navigate to="/" />} /> */}
