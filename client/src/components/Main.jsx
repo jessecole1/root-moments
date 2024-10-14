@@ -21,10 +21,6 @@ const Main = () => {
         setHover(val);
     }
 
-    useEffect(() => {
-        console.log(window.scrollY);
-    })
-
     return (
         <div style={{ fontFamily: "IBM Plex Mono" }} class="flex flex-col h-screen">
             <Navbar />
