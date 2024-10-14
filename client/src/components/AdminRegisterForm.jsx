@@ -48,7 +48,7 @@ const AdminRegisterForm = () => {
     axios.post("http://localhost:8000/admin/register", formData, {withCredentials: true})
       .then((response) => {
         console.log("Registration successful: ", response.data);
-        navigate("/admin/login"); // Redirect to admin login page on successful registration
+        navigate("/admin-login"); // Redirect to admin login page on successful registration
       })
       .catch((err) => {
         console.log("Registration error: ", err);

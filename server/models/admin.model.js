@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 
 const AdminSchema = mongoose.Schema({
     email: {
@@ -34,11 +34,19 @@ AdminSchema.pre('validate', function(next) {
 });
 
 AdminSchema.pre('save', function(next) {
-    bcrypt.hash(this.password, 10)
-        .then(hash => {
-            this.password = hash;
-            next();
-        });
+
+    if (!this.isModified('password')) return next();
+
+    bcrypt.hash(this.password, 10, (err, hash) => {
+        if (err) return next(err);
+        this.password = hash;
+        next();
+    })
+    // bcrypt.hash(this.password, 10)
+    //     .then(hash => {
+    //         this.password = hash;
+    //         next();
+    //     });
 });
 
 module.exports = mongoose.model('Admin', AdminSchema);

@@ -1,6 +1,7 @@
 const Admin = require('../models/admin.model');
 const Order = require("../models/order.model");
 const jwt = require('jsonwebtoken');
+const bcrypt = require('bcryptjs');
 const sendOrderNotification = require('../mailer');
 const sendOrderNotificationToCustomer = require('../mailer');
 
@@ -44,6 +45,12 @@ module.exports.adminLogin = async (request, response) => {
     try {
         const admin = await Admin.findOne({ email: request.body.email });
         if (!admin) {
+            return response.sendStatus(400);
+        }
+
+        // Verify the password
+        const isPasswordValid = await bcrypt.compare(request.body.password, admin.password);
+        if (!isPasswordValid) {
             return response.sendStatus(400);
         }
 
