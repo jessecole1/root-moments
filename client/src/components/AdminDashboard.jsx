@@ -99,7 +99,10 @@ const AdminDashboard = () => {
 
   const handleLogout = () => {
     axios.post("https://root-moments.onrender.com/logout", {}, {withCredentials: true})
-    .then(setAdminLoggedIn(false))
+    .then(() => {
+        setAdminLoggedIn(false);
+        setAdmin(null);
+    })
     .then(() => {
         navigate('/admin-login')
     })
@@ -164,7 +167,7 @@ const AdminDashboard = () => {
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
-            <ListItemButton onClick={handleLogout} component={Link} to="">
+            <ListItemButton onClick={handleLogout} >
               <ListItemIcon>
               <LogoutIcon />
               </ListItemIcon>
