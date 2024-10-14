@@ -88,14 +88,17 @@ module.exports.adminLogout = (request, response) => {
 
 module.exports.getAdmin = async (request, response) => {
     const token = request.cookies.admintoken;
+    console.log("TOKEN? : " + token);
     if (token) {
         try {
             const decodedToken = jwt.verify(token, process.env.FIRST_SECRET_KEY);
             Admin.findOne({ _id: decodedToken.id })
             .then(admin => {
                 if (admin) {
+                    console.log("Found an admin and responding with it, admin: admin, loggedInStatus: true")
                     response.json({ admin: admin, loggedInStatus: true })
                 } else {
+                    console.log("Couldn't find an admin and responding without it, admin: null, loggedInStatus: false")
                     response.status(200).json({ admin: null, loggedInStatus: false })
                 }
             })
