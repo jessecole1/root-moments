@@ -77,7 +77,7 @@ const AdminDashboard = () => {
     const theme = useTheme();
     const [open, setOpen] = useState(false);
     const navigate = useNavigate();
-    const { admin, adminLoggedIn, setAdminLoggedIn, loading } = useAppContext();
+    const { admin, setAdmin, adminLoggedIn, setAdminLoggedIn, loading } = useAppContext();
     console.log("admin: " + admin.email);
 
   const handleDrawerOpen = () => {

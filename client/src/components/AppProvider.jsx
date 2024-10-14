@@ -16,7 +16,7 @@ const AppProvider = ({ children }) => {
             .then((res) => {
                 if (res.data.loggedInStatus) {
                     setAdminLoggedIn(true);
-                    setAdmin(response.data.admin);
+                    setAdmin(res.data.admin);
                   } else {
                     setAdminLoggedIn(false);
                     setAdmin(null);
