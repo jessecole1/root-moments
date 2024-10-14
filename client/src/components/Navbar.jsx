@@ -61,18 +61,16 @@ const Navbar = () => {
 
                     {/* Admin Login/Dashboard Link */}
                     {adminLoggedIn ? (
-                        <Button component={Link} to="/dashboard" variant="contained" color="primary">
-                            Admin Dashboard
-                        </Button>
+                        // <Button component={Link} to="/dashboard" variant="contained" color="primary">
+                        //     Admin Dashboard
+                        // </Button>
+                        <Link to="/dashboard"><Button variant="contained" color="primary">Admin Dashboard</Button></Link>
                     ) : (
                         <div>
                             <Button sx={{ margin: "auto", color: ""}} size="large" variant="contained">
                                 Get Started
                             </Button>
                         </div>
-                        // <Button component={Link} to="/admin/login" variant="contained" color="primary">
-                        //     Admin Login
-                        // </Button>
                     )}
 
                     {/* Mobile menu button */}
