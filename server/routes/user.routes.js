@@ -6,7 +6,7 @@ module.exports = (app) => {
     app.get('/api/admin/orders', AdminController.getAllOrders);
     app.post('/admin-login', AdminController.adminLogin);
     app.post("/place-order", AdminController.placeOrder);
-    app.post("/logout", AdminController.adminLogout)
+    app.post("/admin/logout", AdminController.adminLogout)
 
     app.post("/admin/register", AdminController.adminRegister);
 }
