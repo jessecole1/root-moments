@@ -42,6 +42,7 @@ const AppProvider = ({ children }) => {
     useEffect(() => {
         console.log("checking this");
         checkIfLoggedIn();
+        console.log("log status: " + adminLoggedIn);
     }, []);
 
     return (

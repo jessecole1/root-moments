@@ -59,7 +59,9 @@ module.exports.adminLogin = async (request, response) => {
         }, process.env.FIRST_SECRET_KEY);
 
         response.cookie("admintoken", adminToken, {
-            httpOnly: true
+            httpOnly: true,
+            secure: true,
+            maxAge: 24 * 60 * 60 * 1000 * 7,
         })
         .json({ message: "Admin Successfully Logged In", admin: admin, cookie: adminToken });
     } catch (err) {
