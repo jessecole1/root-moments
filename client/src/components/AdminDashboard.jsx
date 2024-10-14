@@ -78,7 +78,7 @@ const AdminDashboard = () => {
     const [open, setOpen] = useState(false);
     const navigate = useNavigate();
     const { admin, adminLoggedIn, setAdminLoggedIn, loading } = useAppContext();
-    console.log("admin: " + JSON.stringify(admin));
+    console.log("admin: " + admin.email);
 
   const handleDrawerOpen = () => {
     setOpen(true);
