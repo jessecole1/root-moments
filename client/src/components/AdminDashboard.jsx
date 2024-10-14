@@ -92,7 +92,7 @@ const AdminDashboard = () => {
     return <div>Loading...</div>;
   }
 
-  if (!admin) {
+  if (!adminLoggedIn) {
     navigate('/admin-login');
     return null;
   }

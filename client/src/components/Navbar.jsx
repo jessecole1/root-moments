@@ -50,8 +50,8 @@ const Navbar = () => {
                         <Link to="/">
                             <img className="h-24 w-auto" src={logo} alt="Logo" />
                         </Link>
-                        <p>test 1</p>
                     </div>
+                        <p>test 2</p>
 
                     {/* Desktop menu */}
                     <div className={`flex flex-row justify-evenly w-[540px] ${windowWidth < 1024 ? "hidden" : ""}`}>
@@ -62,10 +62,10 @@ const Navbar = () => {
 
                     {/* Admin Login/Dashboard Link */}
                     {adminLoggedIn ? (
-                        // <Button component={Link} to="/dashboard" variant="contained" color="primary">
-                        //     Admin Dashboard
-                        // </Button>
-                        <Link to="/dashboard"><Button variant="contained" color="primary">Admin Dashboard</Button></Link>
+                        <Button component={Link} to="/dashboard" variant="contained" color="primary">
+                            Admin Dashboard
+                        </Button>
+                        // <Link to="/dashboard"><Button variant="contained" color="primary">Admin Dashboard</Button></Link>
                     ) : (
                         <div>
                             <Button sx={{ margin: "auto", color: ""}} size="large" variant="contained">
