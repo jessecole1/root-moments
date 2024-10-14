@@ -9,7 +9,7 @@ const AppProvider = ({ children }) => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    const checkIfLoggedIn = () => {
+    const checkIfLoggedIn = async () => {
         setLoading(true);
         setError(null);
         axios.get("https://root-moments.onrender.com/admin", {withCredentials: true})

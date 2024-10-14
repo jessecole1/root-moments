@@ -70,8 +70,14 @@ module.exports.adminLogin = async (request, response) => {
     }
 };
 
-module.exports.adminLogout = async (request, response) => {
-    response.clearCookie("admintoken");
+module.exports.adminLogout = (request, response) => {
+    response.clearCookie("admintoken", {
+        path: '/',  // Ensure this matches how the cookie was set
+        domain: '.yourdomain.com',  // Use the same domain if specified while setting the cookie
+        secure: true,  // Same as when the cookie was created
+        httpOnly: true,  // If this was set when the cookie was created
+        sameSite: 'None'
+    });
     response.sendStatus(200);
 };
 
