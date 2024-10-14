@@ -32,7 +32,10 @@ module.exports.adminRegister = (request, response) => {
         }, process.env.FIRST_SECRET_KEY);
 
         response.cookie("admintoken", adminToken, {
-            httpOnly: true
+            httpOnly: true,
+            secure: true,
+            sameSite: 'None',
+            domain: '.rootmoments.netlify.app',
         });
         response.json({ message: "Admin Successfully Registered", admin: admin, cookie: adminToken });
     })
@@ -62,6 +65,7 @@ module.exports.adminLogin = async (request, response) => {
             httpOnly: true,
             secure: true,
             sameSite: 'None',
+            domain: '.rootmoments.netlify.app',
             maxAge: 24 * 60 * 60 * 1000 * 7,
         })
         .json({ message: "Admin Successfully Logged In", admin: admin, cookie: adminToken });
