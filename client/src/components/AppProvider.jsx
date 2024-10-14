@@ -26,6 +26,17 @@ const AppProvider = ({ children }) => {
         })
     }
 
+    const logout = () => {
+        axios.post(`${backEnd}/admin/logout`, {}, {withCredentials: true})
+            .then(() => {
+                setAdmin(null);
+                setAdminLoggedIn(false);
+            })
+            .catch((err) => {
+                console.log("Error logging out", err);
+            });
+    };
+
     // const checkIfLoggedIn = async () => {
     //     await setLoading(true);
     //     await setError(null);
@@ -50,16 +61,7 @@ const AppProvider = ({ children }) => {
     //         });
     // };
 
-    const logout = () => {
-        axios.post(`${backEnd}/admin/logout`, {}, {withCredentials: true})
-            .then(() => {
-                setAdmin(null);
-                setAdminLoggedIn(false);
-            })
-            .catch((err) => {
-                console.log("Error logging out", err);
-            });
-    };
+
 
     useEffect(() => {
         console.log("checking this");

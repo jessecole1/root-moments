@@ -77,7 +77,7 @@ const AdminDashboard = () => {
     const theme = useTheme();
     const [open, setOpen] = useState(false);
     const navigate = useNavigate();
-    const { setLoading, checkIfLoggedIn, backEnd, admin, setAdmin, adminLoggedIn, setAdminLoggedIn, loading } = useAppContext();
+    const { logout, setLoading, checkIfLoggedIn, backEnd, admin, setAdmin, adminLoggedIn, setAdminLoggedIn, loading } = useAppContext();
 
     // useEffect(() => {
     //     checkIfLoggedIn();
@@ -105,18 +105,20 @@ const AdminDashboard = () => {
 //   }
 
   // - - AXIOS - -
+
   const handleLogout = () => {
-    axios.post(`${backEnd}/logout`, {}, {withCredentials: true})
-    .then(() => {
-        // localStorage.removeItem('adminInfo');
-        localStorage.removeItem('adminInfo');
-        setAdminLoggedIn(false);
-        setAdmin(null);
-        navigate('/admin-login')
-    })
-    .catch((err) => {
-        console.log("Something went wrong logging out", err);
-    })
+    logout();
+    // axios.post(`${backEnd}/logout`, {}, {withCredentials: true})
+    // .then(() => {
+    //     // localStorage.removeItem('adminInfo');
+    //     localStorage.removeItem('adminInfo');
+    //     setAdminLoggedIn(false);
+    //     setAdmin(null);
+    //     navigate('/admin-login')
+    // })
+    // .catch((err) => {
+    //     console.log("Something went wrong logging out", err);
+    // })
   }
 
 
@@ -154,7 +156,7 @@ const AdminDashboard = () => {
         open={open}
       >
         <DrawerHeader>
-          <IconButton onClick={handleDrawerClose}>
+          <IconButton onClick={handleLogout}>
             {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           </IconButton>
         </DrawerHeader>
