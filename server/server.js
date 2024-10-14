@@ -22,7 +22,7 @@ app.use(cookieParser());
 //     methods: ['GET', 'POST'] }));
 
 app.use(cors({
-    origin: 'https://your-frontend.netlify.app',  // Replace with your Netlify domain
+    origin: 'https://rootmoments.netlify.app',  // Replace with your Netlify domain
     credentials: true 
 }));
 
