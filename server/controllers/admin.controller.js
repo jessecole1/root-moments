@@ -50,17 +50,17 @@ module.exports.adminLogin = async (request, response) => {
         if (!admin) {
             return response.sendStatus(400);
         }
-
+        console.log("adminLogin -> admin: " + admin);
         // Verify the password
         const isPasswordValid = await bcrypt.compare(request.body.password, admin.password);
         if (!isPasswordValid) {
             return response.sendStatus(400);
         }
-
+        console.log("adminLogin -> isPasswordValid: " + isPasswordValid);
         const adminToken = jwt.sign({
             id: admin._id
         }, process.env.FIRST_SECRET_KEY);
-
+        console.log("adminLogin -> adminToken: " + adminToken);
         response.cookie("admintoken", adminToken, {
             httpOnly: true,
             secure: true,
