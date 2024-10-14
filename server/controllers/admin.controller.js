@@ -35,7 +35,7 @@ module.exports.adminRegister = (request, response) => {
             httpOnly: true,
             secure: true,
             sameSite: 'None',
-            domain: '.rootmoments.netlify.app',
+            // domain: '.rootmoments.netlify.app',
         });
         response.json({ message: "Admin Successfully Registered", admin: admin, cookie: adminToken });
     })
