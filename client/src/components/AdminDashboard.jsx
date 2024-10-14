@@ -156,7 +156,7 @@ const AdminDashboard = () => {
         open={open}
       >
         <DrawerHeader>
-          <IconButton onClick={handleLogout}>
+          <IconButton onClick={handleDrawerClose}>
             {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           </IconButton>
         </DrawerHeader>

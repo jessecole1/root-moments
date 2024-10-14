@@ -64,6 +64,7 @@ const AdminLoginForm = () => {
         .then((response) => {
           console.log("Login successful: ", response.data);
           checkIfLoggedIn(); // Update the global state
+          navigate("/");
         })
         .catch((err) => {
           console.log("Login error: ", err);
