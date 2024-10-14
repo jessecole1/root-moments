@@ -72,10 +72,13 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 }));
 
 const AdminDashboard = () => {
-  const theme = useTheme();
-  const [open, setOpen] = useState(false);
-  const navigate = useNavigate();
-  const { admin, adminLoggedIn, setAdminLoggedIn, loading } = useAppContext();
+
+    
+    const theme = useTheme();
+    const [open, setOpen] = useState(false);
+    const navigate = useNavigate();
+    const { admin, adminLoggedIn, setAdminLoggedIn, loading } = useAppContext();
+    console.log("admin: " + JSON.stringify(admin));
 
   const handleDrawerOpen = () => {
     setOpen(true);

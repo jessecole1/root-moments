@@ -50,6 +50,7 @@ const Navbar = () => {
                         <Link to="/">
                             <img className="h-24 w-auto" src={logo} alt="Logo" />
                         </Link>
+                        <p>test 1</p>
                     </div>
 
                     {/* Desktop menu */}

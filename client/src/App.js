@@ -38,7 +38,7 @@ function App({ children }) {
               <Route element={<AdminDashboard path="/dashboard" />}/>
               <Route element={<AdminOrdersPage />} path="/orders" />
 
-              {/* <Route path="*" element={<Navigate to="/" />} /> */}
+              <Route path="*" element={<Navigate to="/" />} />
             </Routes>
           </BrowserRouter>
         </div>
