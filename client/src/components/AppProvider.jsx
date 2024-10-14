@@ -12,7 +12,7 @@ const AppProvider = ({ children }) => {
     const checkIfLoggedIn = () => {
         setLoading(true);
         setError(null);
-        axios.get("http://localhost:8000/admin", {withCredentials: true})
+        axios.get("https://root-moments.onrender.com/admin", {withCredentials: true})
             .then((res) => {
                 setAdmin(res.data.admin);
                 setAdminLoggedIn(res.data.loggedInStatus);
@@ -29,7 +29,7 @@ const AppProvider = ({ children }) => {
     };
 
     const logout = () => {
-        axios.post("http://localhost:8000/admin/logout", {}, {withCredentials: true})
+        axios.post("https://root-moments.onrender.com/admin/logout", {}, {withCredentials: true})
             .then(() => {
                 setAdmin(null);
                 setAdminLoggedIn(false);

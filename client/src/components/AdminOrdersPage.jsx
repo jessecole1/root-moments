@@ -32,7 +32,7 @@ const AdminOrdersPage = () => {
   const fetchOrders = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('http://localhost:8000/api/admin/orders', {
+      const response = await axios.get('https://root-moments.onrender.com/api/admin/orders', {
         withCredentials: true
       });
       setOrders(response.data);

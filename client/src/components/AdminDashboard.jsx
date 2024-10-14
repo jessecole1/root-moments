@@ -95,7 +95,7 @@ const AdminDashboard = () => {
   }
 
   const handleLogout = () => {
-    axios.post("http://localhost:8000/logout", {}, {withCredentials: true})
+    axios.post("https://root-moments.onrender.com/logout", {}, {withCredentials: true})
     .then(setAdminLoggedIn(false))
     .then(() => {
         navigate('/admin-login')

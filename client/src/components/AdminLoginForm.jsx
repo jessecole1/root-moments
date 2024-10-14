@@ -59,7 +59,7 @@ const AdminLoginForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
-      axios.post("http://localhost:8000/admin-login", formData, {withCredentials: true})
+      axios.post("https://root-moments.onrender.com/admin-login", formData, {withCredentials: true})
         .then((response) => {
           console.log("Login successful: ", response.data);
           checkIfLoggedIn(); // Update the global state

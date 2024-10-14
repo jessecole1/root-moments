@@ -45,7 +45,7 @@ const AdminRegisterForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:8000/admin/register", formData, {withCredentials: true})
+    axios.post("https://root-moments.onrender.com/admin/register", formData, {withCredentials: true})
       .then((response) => {
         console.log("Registration successful: ", response.data);
         navigate("/admin-login"); // Redirect to admin login page on successful registration

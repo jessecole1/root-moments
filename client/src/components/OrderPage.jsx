@@ -80,7 +80,7 @@ const OrderForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:8000/place-order", formData, {withCredentials: true})
+    axios.post("https://root-moments.onrender.com/place-order", formData, {withCredentials: true})
       .then((response) => {
         console.log("Form submitted: ", response.data);
         navigate("/order-success");  // Redirect to the success page
