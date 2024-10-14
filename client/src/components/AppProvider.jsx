@@ -9,34 +9,49 @@ const AppProvider = ({ children }) => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
+    const backEnd = "https://root-moments.onrender.com";
+
     const checkIfLoggedIn = async () => {
-        setLoading(true);
-        setError(null);
-        axios.get("https://root-moments.onrender.com/admin", {withCredentials: true})
-            .then((res) => {
-                if (res.data.loggedInStatus) {
-                    setAdminLoggedIn(true);
-                    setAdmin(res.data.admin);
-                  } else {
-                    setAdminLoggedIn(false);
-                    setAdmin(null);
-                  }
-                // setAdmin(res.data.admin);
-                // setAdminLoggedIn(res.data.loggedInStatus);
-            })
-            .catch((err) => {
-                console.log("Error checking authentication", err);
-                setError("Failed to authenticate");
-                setAdmin(null);
-                setAdminLoggedIn(false);
-            })
-            .finally(() => {
-                setLoading(false);
-            });
-    };
+        console.log("running checkIfLoggedIn");
+        axios.get(`${backEnd}/admin`, {withCredentials: true})
+        .then((res) => {
+            console.log("yes, admin");
+            setAdminLoggedIn(res.data.loggedInStatus);
+            console.log(JSON.stringify(res.data));
+            setAdmin(res.data.admin);
+        })
+        .catch((err) => {
+            setAdminLoggedIn(false);
+            setAdmin(null);
+        })
+    }
+
+    // const checkIfLoggedIn = async () => {
+    //     await setLoading(true);
+    //     await setError(null);
+    //     await axios.get(`${backEnd}/admin`, {}, {withCredentials: true})
+    //         .then((res) => {
+    //             if (res.data.loggedInStatus) {
+    //                 setAdminLoggedIn(true);
+    //                 setAdmin(res.data.admin);
+    //               } else {
+    //                 setAdminLoggedIn(false);
+    //                 setAdmin(null);
+    //               }
+    //         })
+    //         .catch((err) => {
+    //             console.log("Error checking authentication", err);
+    //             setError("Failed to authenticate");
+    //             setAdmin(null);
+    //             setAdminLoggedIn(false);
+    //         })
+    //         .finally(() => {
+    //             setLoading(false);
+    //         });
+    // };
 
     const logout = () => {
-        axios.post("https://root-moments.onrender.com/admin/logout", {}, {withCredentials: true})
+        axios.post(`${backEnd}/admin/logout`, {}, {withCredentials: true})
             .then(() => {
                 setAdmin(null);
                 setAdminLoggedIn(false);
@@ -55,7 +70,7 @@ const AppProvider = ({ children }) => {
     return (
         <AppContext.Provider value={{
             admin, setAdmin, adminLoggedIn, setAdminLoggedIn,
-            checkIfLoggedIn, loading, error, logout
+            checkIfLoggedIn, loading, error, logout, backEnd, setLoading
         }}>
             {children}
         </AppContext.Provider>

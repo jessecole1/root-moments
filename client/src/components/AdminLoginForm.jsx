@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
@@ -23,8 +23,9 @@ const Input = ({ label, type, name, value, onChange, required, error }) => (
 );
 
 const AdminLoginForm = () => {
+
   const navigate = useNavigate();
-  const { checkIfLoggedIn } = useAppContext();
+  const { adminLoggedIn, checkIfLoggedIn, backEnd } = useAppContext();
 
   const [formData, setFormData] = useState({
     email: '',
@@ -59,11 +60,10 @@ const AdminLoginForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
-      axios.post("https://root-moments.onrender.com/admin-login", formData, {withCredentials: true})
+      axios.post(`${backEnd}/admin-login`, formData, {withCredentials: true})
         .then((response) => {
           console.log("Login successful: ", response.data);
           checkIfLoggedIn(); // Update the global state
-          navigate("/dashboard");
         })
         .catch((err) => {
           console.log("Login error: ", err);
@@ -77,6 +77,12 @@ const AdminLoginForm = () => {
       console.log("Form has errors. Please correct them.");
     }
   };
+
+  useEffect(() => {
+    if (adminLoggedIn) {
+      navigate("/dashboard");
+    }
+  }, [adminLoggedIn, navigate]);
 
   return (
     <div className=''>

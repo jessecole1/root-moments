@@ -23,7 +23,7 @@ const AdminOrdersPage = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
-  const { admin } = useAppContext();
+  const { admin, backEnd } = useAppContext();
 
   useEffect(() => {
     fetchOrders();
@@ -32,7 +32,7 @@ const AdminOrdersPage = () => {
   const fetchOrders = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('https://root-moments.onrender.com/api/admin/orders', {
+      const response = await axios.get(`${backEnd}/api/admin/orders`, {
         withCredentials: true
       });
       setOrders(response.data);

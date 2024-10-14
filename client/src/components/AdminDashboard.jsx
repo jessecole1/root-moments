@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -77,8 +77,15 @@ const AdminDashboard = () => {
     const theme = useTheme();
     const [open, setOpen] = useState(false);
     const navigate = useNavigate();
-    const { admin, setAdmin, adminLoggedIn, setAdminLoggedIn, loading } = useAppContext();
-    console.log("admin: " + admin.email);
+    const { setLoading, checkIfLoggedIn, backEnd, admin, setAdmin, adminLoggedIn, setAdminLoggedIn, loading } = useAppContext();
+
+    // useEffect(() => {
+    //     checkIfLoggedIn();
+    // }, []);
+
+    useEffect(() => {
+        if (adminLoggedIn) setLoading(false);
+      })
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -92,13 +99,14 @@ const AdminDashboard = () => {
     return <div>Loading...</div>;
   }
 
-  if (!adminLoggedIn) {
-    navigate('/admin-login');
-    return null;
-  }
+//   if (!adminLoggedIn) {
+//     navigate('/admin-login');
+//     return null;
+//   }
 
+  // - - AXIOS - -
   const handleLogout = () => {
-    axios.post("https://root-moments.onrender.com/logout", {withCredentials: true})
+    axios.post(`${backEnd}/logout`, {}, {withCredentials: true})
     .then(() => {
         // localStorage.removeItem('adminInfo');
         localStorage.removeItem('adminInfo');
@@ -110,6 +118,8 @@ const AdminDashboard = () => {
         console.log("Something went wrong logging out", err);
     })
   }
+
+
 
   return (
     <Box sx={{ display: 'flex' }}>

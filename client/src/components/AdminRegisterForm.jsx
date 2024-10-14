@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 
+import { useAppContext } from './AppProvider';
+
 const Input = ({ label, type, name, value, onChange, required, error }) => (
   <div className="mb-4">
     <label className="block text-sm font-medium text-gray-700 mb-1">{label}</label>
@@ -20,6 +22,8 @@ const Input = ({ label, type, name, value, onChange, required, error }) => (
 );
 
 const AdminRegisterForm = () => {
+
+    const {backEnd} = useAppContext();
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -45,7 +49,7 @@ const AdminRegisterForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("https://root-moments.onrender.com/admin/register", formData, {withCredentials: true})
+    axios.post(`${backEnd}/admin/register`, formData, {withCredentials: true})
       .then((response) => {
         console.log("Registration successful: ", response.data);
         navigate("/admin-login"); // Redirect to admin login page on successful registration

@@ -6,7 +6,7 @@ import logo from '../icons/rootmoments_logo.png';
 import { useAppContext } from './AppProvider';
 
 const Navbar = () => {
-    const { adminLoggedIn } = useAppContext();
+    const { adminLoggedIn, admin, checkIfLoggedIn } = useAppContext();
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const [menuOpen, setMenuOpen] = useState(false);
 
@@ -42,7 +42,11 @@ const Navbar = () => {
         </Button>
     );
 
-    console.log("CHECK: " + adminLoggedIn);
+    // console.log("CHECK: " + adminLoggedIn);
+
+    // useEffect(() => {
+    //     checkIfLoggedIn();
+    // }, []);
 
     return (
         <nav className="bg-white shadow-md">
@@ -53,7 +57,7 @@ const Navbar = () => {
                             <img className="h-24 w-auto" src={logo} alt="Logo" />
                         </Link>
                     </div>
-                        <p>test 8</p>
+                        <p></p>
 
                     {/* Desktop menu */}
                     <div className={`flex flex-row justify-evenly w-[540px] ${windowWidth < 1024 ? "hidden" : ""}`}>

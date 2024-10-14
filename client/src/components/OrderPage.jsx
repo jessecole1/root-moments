@@ -5,6 +5,7 @@ import axios from 'axios';
 
 import Navbar from './Navbar';
 import Footer from './Footer';
+import { useAppContext } from './AppProvider';
 
 const Input = ({ label, type, name, value, onChange, required }) => (
   <div className="mb-4">
@@ -41,6 +42,8 @@ const Select = ({ label, name, value, onChange, options, required }) => (
 const OrderForm = () => {
 
     const navigate = useNavigate();
+
+    const {backEnd} = useAppContext();
 
   const [formData, setFormData] = useState({
     firstName: '',
@@ -80,7 +83,7 @@ const OrderForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("https://root-moments.onrender.com/place-order", formData, {withCredentials: true})
+    axios.post(`${backEnd}/place-order`, formData, {withCredentials: true})
       .then((response) => {
         console.log("Form submitted: ", response.data);
         navigate("/order-success");  // Redirect to the success page

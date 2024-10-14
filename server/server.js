@@ -22,7 +22,8 @@ app.use(cookieParser());
 //     methods: ['GET', 'POST'] }));
 
 app.use(cors({
-    origin: 'https://rootmoments.netlify.app',  // Replace with your Netlify domain
+    origin: 'https://rootmoments.netlify.app', 
+    // origin: 'http://localhost:3000',
     credentials: true 
 }));
 
