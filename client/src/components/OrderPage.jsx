@@ -70,15 +70,15 @@ const OrderForm = () => {
   };
 
   const packageOptions = [
-    { value: 'classic', label: 'Classic Preservation' },
-    { value: 'memory', label: 'Memory Keeper' },
-    { value: 'premium', label: 'Premium Archival' }
+    { value: 'Classic', label: 'Classic Preservation' },
+    { value: 'Memory', label: 'Memory Keeper' },
+    { value: 'Premium', label: 'Premium Archival' }
   ];
 
   const serviceOptions = [
-    { value: 'inHome', label: 'In Home' },
-    { value: 'pickUp', label: 'Pick Up' },
-    { value: 'dropOff', label: 'Drop Off' }
+    { value: 'In Home', label: 'In Home' },
+    { value: 'Pick Up', label: 'Pick Up' },
+    { value: 'Drop Off', label: 'Drop Off' }
   ];
 
   const handleSubmit = (e) => {
@@ -112,15 +112,15 @@ const OrderForm = () => {
       {formData.package && (
         <div className="mb-4 p-4 bg-gray-100 rounded-md">
           <h3 className="font-semibold mb-2">Package Details:</h3>
-          {formData.package === 'classic' && <p>Includes organization, scanning, and editing. For Loose Photos, Pocket style albums, and memorabilia.</p>}
-          {formData.package === 'memory' && <p>Includes everything in Classic Preservation plus denoising using Lightroom. For everything in Classic Preservation, Adhesive style albums, and photo backs with annotations.</p>}
-          {formData.package === 'premium' && <p>Includes everything in Memory Keeper plus uploading to Google Photos for easy access and organization into digital albums. For anything in Memory Keeper and full page scrapbooks.</p>}
+          {formData.package === 'Classic' && <p>Includes organization, scanning, and editing. For Loose Photos, Pocket style albums, and memorabilia.</p>}
+          {formData.package === 'Memory' && <p>Includes everything in Classic Preservation plus denoising using Lightroom. For everything in Classic Preservation, Adhesive style albums, and photo backs with annotations.</p>}
+          {formData.package === 'Premium' && <p>Includes everything in Memory Keeper plus uploading to Google Photos for easy access and organization into digital albums. For anything in Memory Keeper and full page scrapbooks.</p>}
         </div>
       )}
       
       <Select label="Service Type" name="serviceType" value={formData.serviceType} onChange={handleChange} options={serviceOptions} required />
       
-      {(formData.serviceType === 'inHome' || formData.serviceType === 'pickUp') && (
+      {(formData.serviceType === 'In Home' || formData.serviceType === 'Pick Up') && (
         <div className="mb-4 p-4 bg-gray-100 rounded-md">
           <h3 className="font-semibold mb-2">Address:</h3>
           <Input label="Street" type="text" name="address" value={formData.address} onChange={handleChange} required />

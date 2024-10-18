@@ -24,25 +24,25 @@ module.exports.placeOrder = (request, response) => {
     })
 }
 
-module.exports.adminRegister = (request, response) => {
-    Admin.create(request.body)
-    .then((admin) => {
-        const adminToken = jwt.sign({
-            id: admin._id
-        }, process.env.FIRST_SECRET_KEY);
+// module.exports.adminRegister = (request, response) => {
+//     Admin.create(request.body)
+//     .then((admin) => {
+//         const adminToken = jwt.sign({
+//             id: admin._id
+//         }, process.env.FIRST_SECRET_KEY);
 
-        response.cookie("admintoken", adminToken, {
-            httpOnly: true,
-            secure: true,
-            sameSite: 'None',
-            // domain: 'rootmoments.netlify.app',
-        });
-        response.json({ message: "Admin Successfully Registered", admin: admin, cookie: adminToken });
-    })
-    .catch((err) => {
-        response.json(err);
-    })
-}
+//         response.cookie("admintoken", adminToken, {
+//             httpOnly: true,
+//             secure: true,
+//             sameSite: 'None',
+//             // domain: 'rootmoments.netlify.app',
+//         });
+//         response.json({ message: "Admin Successfully Registered", admin: admin, cookie: adminToken });
+//     })
+//     .catch((err) => {
+//         response.json(err);
+//     })
+// }
 
 module.exports.adminLogin = async (request, response) => {
     try {

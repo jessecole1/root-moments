@@ -8,5 +8,5 @@ module.exports = (app) => {
     app.post("/place-order", AdminController.placeOrder);
     app.post("/admin/logout", AdminController.adminLogout)
 
-    app.post("/admin/register", AdminController.adminRegister);
+    // app.post("/admin/register", AdminController.adminRegister);
 }

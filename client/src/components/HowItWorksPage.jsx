@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { ChevronDown, ChevronRight, Image, FileText, PhoneCall, Camera } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+
+import Button from '@mui/material/Button';
 
 import Navbar from './Navbar';
 import Footer from './Footer';
@@ -39,6 +42,9 @@ const ToggleableSection = ({ number, title, content, subSteps }) => {
 };
 
 const HowItWorksPage = () => {
+
+  const navigate = useNavigate();
+
   const steps = [
     {
       icon: <Image className="w-8 h-8 text-indigo-600" />,
@@ -65,13 +71,30 @@ const HowItWorksPage = () => {
     }
   ];
 
+  const handleClickPricing = () => {
+    navigate("/pricing");
+  }
+
+  const handleClickOrder = () => {
+    navigate('/order/photo-scanning');
+  }
+
   return (
     <div style={{ fontFamily: "IBM Plex Mono" }}>
       <Navbar />
       <div className="bg-[#F3EDE4] pb-8 pt-8">
 
         <div className="bg-white shadow-2xl p-8 rounded-2xl max-w-4xl mx-auto">
-          <h1 className="text-4xl font-bold mb-8">How It Works</h1>
+          <h1 className="text-6xl font-bold mb-8">How It Works</h1>
+          <div className="flex flex-row">
+            <p className="text-xl w-2/3 mb-8">Effortlessly preserve your memories through our simple photo scanning process.</p>
+            <div className="flex flex-col items-center w-1/4 mb-8">
+              <p className="text-center font-bold">Check Out our Pricing</p>
+              <Button variant="contained" onClick={handleClickPricing} className="bg-indigo-600 text-white py-2 px-6 rounded-lg font-semibold transition-colors">
+                    Pricing
+              </Button>
+            </div>
+          </div>
           
           {steps.map((step, index) => (
             <ToggleableSection
@@ -87,10 +110,31 @@ const HowItWorksPage = () => {
               subSteps={step.subSteps}
             />
           ))}
-{/*           
-          <div className="mt-8 text-gray-500 italic">
-            Last edited 1 hour ago
-          </div> */}
+          <div className=" text-gray-800 ">
+            <div className="mt-8 mb-8 bg-white shadow-inner p-8 rounded-2xl max-w-4xl mx-auto">
+                <div className="grid md:grid-cols-2 gap-8 mb-16">
+                </div>
+        
+        
+                <div className="w-1/2 m-auto space-y-8 mb-16">
+                  <div className="flex items-center justify-between">
+                      <p className="text-xl">Ready to Order? Go here and choose your tier!</p>
+                      <Button onClick={handleClickOrder} variant="contained" className="w-[10rem] flex items-center">
+                      Order
+                      {/* <ArrowRight className="ml-2 h-4 w-4" /> */}
+                      </Button>
+                  </div>
+                
+                  <div className="flex items-center justify-between">
+                      <p className="text-xl">Check out our pricing for which option aligns with your needs.</p>
+                      <Button onClick={handleClickPricing} variant="contained" className="w-[12rem] flex items-center">
+                      Pricing
+                      {/* <ArrowRight className="ml-2 h-4 w-4" /> */}
+                      </Button>
+                  </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <Footer />

@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '@mui/material';
 import { Menu, X } from 'lucide-react';
 import logo from '../icons/rootmoments_logo.png';
 import { useAppContext } from './AppProvider';
 
 const Navbar = () => {
+
+    const navigate = useNavigate();
+
     const { adminLoggedIn, admin, checkIfLoggedIn } = useAppContext();
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const [menuOpen, setMenuOpen] = useState(false);
@@ -42,6 +45,10 @@ const Navbar = () => {
         </Button>
     );
 
+    const handleClick = () => {
+        navigate("/how-it-works")
+    }
+
     // console.log("CHECK: " + adminLoggedIn);
 
     // useEffect(() => {
@@ -74,7 +81,7 @@ const Navbar = () => {
                         // <Link to="/dashboard"><Button variant="contained" color="primary">Admin Dashboard</Button></Link>
                     ) : (
                         <div>
-                            <Button sx={{ margin: "auto", color: ""}} size="large" variant="contained">
+                            <Button onClick={handleClick} sx={{ margin: "auto", color: ""}} size="large" variant="contained">
                                 Get Started
                             </Button>
                         </div>

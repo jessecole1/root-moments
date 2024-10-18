@@ -1,5 +1,6 @@
 import React from 'react';
 import { Check, Camera, Edit, FolderOpen, Upload } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 import Navbar from './Navbar';
 import Footer from './Footer';
@@ -34,6 +35,13 @@ const PricingTier = ({ title, price, features, photoTypes }) => (
 );
 
 const PricingPage = () => {
+
+  const navigate = useNavigate();
+
+  const handleClickOrder = () => {
+    navigate("/order/photo-scanning");
+  }
+
   const pricingTiers = [
     {
       title: "Classic Preservation",
@@ -131,8 +139,8 @@ const PricingPage = () => {
 
             <div className="mt-12 text-center">
             <p className="text-xl mb-4">Ready to preserve your precious memories?</p>
-            <button className="bg-indigo-600 text-white py-2 px-6 rounded-lg font-semibold hover:bg-indigo-700 transition-colors">
-                Get Started Today
+            <button onClick={handleClickOrder} className="bg-indigo-600 text-white py-2 px-6 rounded-lg font-semibold hover:bg-indigo-700 transition-colors">
+                Place Your Order
             </button>
             </div>
         </div>
