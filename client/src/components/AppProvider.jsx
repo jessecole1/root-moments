@@ -10,8 +10,8 @@ const AppProvider = ({ children }) => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    // const backEnd = "https://root-moments.onrender.com";
-    const backEnd = "http://localhost:8000";
+    const backEnd = "https://root-moments.onrender.com";
+    // const backEnd = "http://localhost:8000";
 
     const checkIfLoggedIn = async () => {
         console.log("running checkIfLoggedIn");
