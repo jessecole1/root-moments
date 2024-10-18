@@ -106,8 +106,9 @@ const AdminDashboard = () => {
 
   // - - AXIOS - -
 
-  const handleLogout = () => {
+  const handleLogout = async () => {
     logout();
+    await navigate('/');
     // axios.post(`${backEnd}/logout`, {}, {withCredentials: true})
     // .then(() => {
     //     // localStorage.removeItem('adminInfo');
